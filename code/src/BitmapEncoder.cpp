@@ -4,7 +4,7 @@
 
 #include "BitmapStructure.hpp"
 
-namespace ImageProcessor { namespace Encoder {
+namespace RadonIntermediateConverter {
 
 RF_Type::Bool BitmapEncoder::StoreLayerData(RF_Type::UInt32 Layer,
     const RF_Mem::AutoPointerArray<RF_Type::UInt8>& Data)
@@ -82,4 +82,4 @@ void BitmapEncoder::SetLayers(RF_Type::UInt32 NewLayerCount)
     m_Layer.Resize(m_Layers);
 }
 
-} }
+}

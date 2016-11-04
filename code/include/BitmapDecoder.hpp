@@ -1,9 +1,12 @@
-#ifndef IP_DECODER_BITMAPDECODER_HPP
-#define IP_DECODER_BITMAPDECODER_HPP
+#ifndef RIC_BITMAPDECODER_HPP
+#define RIC_BITMAPDECODER_HPP
+#if _MSC_VER > 1000
+#pragma once
+#endif
 
 #include <RadonFramework/IO/Decoders/ImageDecoder.hpp>
 
-namespace ImageProcessor { namespace Decoder {
+namespace RadonIntermediateConverter {
 
 class BitmapDecoder:public RF_Decoders::ImageDecoder
 {
@@ -30,11 +33,11 @@ protected:
     RF_Type::Size m_DataOffset;
 };
 
-} }
+} 
 
-#ifndef IP_SHORTHAND_NAMESPACE_DECODER
-#define IP_SHORTHAND_NAMESPACE_DECODER
-namespace IP_Decoder = ImageProcessor::Decoder;
+#ifndef RIC_SHORTHAND_NAMESPACE
+#define RIC_SHORTHAND_NAMESPACE
+namespace RIC = RadonIntermediateConverter;
 #endif
 
-#endif // IP_DECODER_BITMAPDECODER_HPP
+#endif // RIC_BITMAPDECODER_HPP

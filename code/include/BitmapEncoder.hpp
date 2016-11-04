@@ -1,9 +1,12 @@
-#ifndef IP_ENCODER_BITMAPENCODER_HPP
-#define IP_ENCODER_BITMAPENCODER_HPP
+#ifndef RIC_BITMAPENCODER_HPP
+#define RIC_BITMAPENCODER_HPP
+#if _MSC_VER > 1000
+#pragma once
+#endif
 
 #include <RadonFramework/IO/Encoders/ImageEncoder.hpp>
 
-namespace ImageProcessor { namespace Encoder {
+namespace RadonIntermediateConverter {
 
 class BitmapEncoder:public RF_Encoders::ImageEncoder
 {
@@ -25,11 +28,11 @@ protected:
     RF_Collect::Array<RF_Mem::AutoPointerArray<RF_Type::UInt8> > m_Layer;
 };
 
-} }
+} 
 
-#ifndef IP_SHORTHAND_NAMESPACE_ENCODER
-#define IP_SHORTHAND_NAMESPACE_ENCODER
-namespace IP_Encoder = ImageProcessor::Encoder;
+#ifndef RIC_SHORTHAND_NAMESPACE
+#define RIC_SHORTHAND_NAMESPACE
+namespace RIC = RadonIntermediateConverter;
 #endif
 
-#endif // IP_ENCODER_BITMAPENCODER_HPP
+#endif // RIC_BITMAPENCODER_HPP

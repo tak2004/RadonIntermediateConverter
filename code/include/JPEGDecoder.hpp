@@ -1,9 +1,12 @@
-#ifndef IP_DECODER_JPEGDECODER_HPP
-#define IP_DECODER_JPEGDECODER_HPP
+#ifndef RIC_JPEGDECODER_HPP
+#define RIC_JPEGDECODER_HPP
+#if _MSC_VER > 1000
+#pragma once
+#endif
 
 #include <RadonFramework/IO/Decoders/ImageDecoder.hpp>
 
-namespace ImageProcessor { namespace Decoder {
+namespace RadonIntermediateConverter {
 
 class JPEGDecoder:public RF_Decoders::ImageDecoder
 {
@@ -31,11 +34,11 @@ protected:
     RF_Mem::AutoPointerArray<RF_Type::UInt8> m_ImageData;
 };
 
-} }
+}
 
-#ifndef IP_SHORTHAND_NAMESPACE_DECODER
-#define IP_SHORTHAND_NAMESPACE_DECODER
-namespace IP_Decoder = ImageProcessor::Decoder;
+#ifndef RIC_SHORTHAND_NAMESPACE
+#define RIC_SHORTHAND_NAMESPACE
+namespace RIC = RadonIntermediateConverter;
 #endif
 
-#endif // IP_DECODER_JPEGDECODER_HPP
+#endif // RIC_JPEGDECODER_HPP

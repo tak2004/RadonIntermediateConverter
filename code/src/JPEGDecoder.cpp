@@ -4,7 +4,7 @@
 
 #include "jpgd.h"
 
-namespace ImageProcessor { namespace Decoder {
+namespace RadonIntermediateConverter {
 
 RF_Mem::AutoPointerArray<RF_Type::UInt8> JPEGDecoder::LoadLayer(RF_Type::UInt32 Layer)
 {
@@ -43,7 +43,7 @@ RF_Type::Size JPEGDecoder::LoadData(void* Data, unsigned int Buffersize)
 
 RF_Type::Size JPEGDecoder::SeekData(RF_Type::Size Bytes)
 {
-    RF_Type::Size result = RF_Math::Integer<RF_Type::Size>::ClampLowerBound(Bytes, m_Bytes - (m_Pointer + Bytes + m_DataOffset));
+    RF_Type::Size result = RF_Math::Integer<RF_Type::Size>::Min(Bytes, m_Bytes - (m_Pointer + Bytes + m_DataOffset));
     m_Pointer += result;
     return result;
 }
@@ -92,4 +92,4 @@ JPEGDecoder::JPEGDecoder()
 
 }
 
-} }
+}
