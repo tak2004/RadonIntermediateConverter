@@ -1,0 +1,11 @@
+AddSourceDirectoryRecursive(srclist "code/3rdParty" "Source")
+AddHeaderDirectoryRecursive(hdrlist "code/3rdParty" "Include")
+Generate(MODULE RF_3RD_PARTY Radon_3rd_Party "3rd Party Libraries")
+AddDependency(RF_3RD_PARTY RadonFramework)
+Finalize(RF_3RD_PARTY)
+
+AddSourceDirectoryRecursive(srclist "code/src" "Source")
+AddHeaderDirectoryRecursive(hdrlist "code/include" "Include")
+Generate(MODULE RF_INTERMEDIATE Radon_Intermediate_Formats "Framework")
+AddDependency(RF_INTERMEDIATE RadonFramework Radon_3rd_Party)
+Finalize(RF_INTERMEDIATE)
