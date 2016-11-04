@@ -26,7 +26,13 @@ RF_Type::Size JPEGDecoder::LoadInformation()
     m_Height = height;
     m_Layers = 1;
     m_PixelFormat.BitPerPixel = 24;
-    m_PixelFormat.Channels = 3;
+    m_PixelFormat.Channels.Resize(3);
+    m_PixelFormat.Channels(0).Bits = 8;
+    m_PixelFormat.Channels(0).Type = RF_Draw::ChannelType::Red;
+    m_PixelFormat.Channels(1).Bits = 8;
+    m_PixelFormat.Channels(1).Type = RF_Draw::ChannelType::Green;
+    m_PixelFormat.Channels(2).Bits = 8;
+    m_PixelFormat.Channels(2).Type = RF_Draw::ChannelType::Blue;
     return m_ImageData.Size();
 }
 
