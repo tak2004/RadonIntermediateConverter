@@ -9,7 +9,7 @@ namespace RadonIntermediateConverter {
 RF_Mem::AutoPointerArray<RF_Type::UInt8> JPEGDecoder::LoadLayer(RF_Type::UInt32 Layer)
 {
     RF_Mem::AutoPointerArray<RF_Type::UInt8> result;
-    if(LoadInformation() && (m_PixelFormat.BitPerPixel >= 24) && Layer == 0)
+    if((m_PixelFormat.BitPerPixel >= 24) && Layer == 0)
     {
         result = m_ImageData.Clone();
     }
@@ -25,6 +25,7 @@ RF_Type::Size JPEGDecoder::LoadInformation()
     m_Width = width;
     m_Height = height;
     m_Layers = 1;
+    m_PixelFormat.Type = RF_Draw::PixelType::Unsigned;
     m_PixelFormat.BitPerPixel = 24;
     m_PixelFormat.Channels.Resize(3);
     m_PixelFormat.Channels(0).Bits = 8;

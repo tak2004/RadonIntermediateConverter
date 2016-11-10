@@ -37,6 +37,7 @@ RF_Type::Size BitmapDecoder::LoadInformation()
 
         m_PixelFormat.BitPerPixel = bmpinfo->biBitCount;
 
+        m_PixelFormat.Type = RF_Draw::PixelType::Unsigned;
         m_PixelFormat.Channels.Resize(3);
         m_PixelFormat.Channels(0).Type = RF_Draw::ChannelType::Red;
         m_PixelFormat.Channels(1).Type = RF_Draw::ChannelType::Green;
