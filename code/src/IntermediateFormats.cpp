@@ -3,6 +3,8 @@
 #include "BitmapDecoder.hpp"
 #include "BitmapEncoder.hpp"
 #include "JPEGDecoder.hpp"
+#include "PNGDecoder.hpp"
+#include "PNGEncoder.hpp"
 
 namespace RadonIntermediateConverter {
 
@@ -16,6 +18,12 @@ void RegisterFormats()
 
     RF_Mem::AutoPointer<RF_IO::DecoderService> jpegDecoder(new RF_IO::GenericDecoderService<JPEGDecoder>("JPEG Decoder"_rfs));
     RF_IO::DecoderServiceLocator::Register(jpegDecoder);
+
+    RF_Mem::AutoPointer<RF_IO::DecoderService> pngDecoder(new RF_IO::GenericDecoderService<PNGDecoder>("PNG Decoder"_rfs));
+    RF_IO::DecoderServiceLocator::Register(pngDecoder);
+
+    RF_Mem::AutoPointer<RF_IO::EncoderService> pngEncoder(new RF_IO::GenericEncoderService<PNGEncoder>("PNG Encoder"_rfs));
+    RF_IO::EncoderServiceLocator::Register(pngEncoder);
 }
 
 }
